@@ -1247,9 +1247,24 @@ if (aboutReveals.length){
     else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
   });
 })();
+	  (function(){
+  const btn = document.getElementById('mobileMenuBtn');
+  const panel = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('menuOverlay');
+  if(!btn || !panel || !overlay) return;
+
+  const open  = () => { document.body.classList.add('menu-open'); btn.setAttribute('aria-expanded','true'); overlay.hidden = false; };
+  const close = () => { document.body.classList.remove('menu-open'); btn.setAttribute('aria-expanded','false'); overlay.hidden = true; };
+
+  btn.addEventListener('click', () => document.body.classList.contains('menu-open') ? close() : open());
+  overlay.addEventListener('click', close);
+  panel.addEventListener('click', e => { if(e.target.closest('a')) close(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
+})();
 </script>
 </body>
 </html>
+
 
 
 
