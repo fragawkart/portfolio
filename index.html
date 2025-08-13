@@ -68,7 +68,7 @@ section { background: transparent; }
 }
 
 /* Brand */
-.nav-brand{ display:flex; align-items:center; gap:.5rem; margin-left:-17rem; }
+.nav-brand{ display:flex; align-items:center; gap:.5rem; }
 .nav-brand .logo{ width:2.5rem; height:auto; display:block; }
 .nav-brand h2{ margin:0; white-space:nowrap; }
 .brand-safe{ color:#fff; }
@@ -1261,9 +1261,31 @@ if (aboutReveals.length){
   panel.addEventListener('click', e => { if(e.target.closest('a')) close(); });
   document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
 })();
+	   // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('active');
+      btn.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    // Zamknij po kliknięciu w link
+    menu.addEventListener('click', e => {
+      if (e.target.closest('a')) {
+        menu.classList.remove('active');
+        btn.setAttribute('aria-expanded','false');
+        document.body.style.overflow = '';
+      }
+    });
+  });
 </script>
 </body>
 </html>
+
 
 
 
