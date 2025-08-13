@@ -715,6 +715,50 @@ section { background: transparent; }
     transform: none !important;
   }
 }
+	  /* Hamburger: pokazujemy na mobile, desktop ukryty */
+@media (max-width: 992px){
+  .nav-menu{ display:none; }
+  .mobile-menu-btn{ display:flex; }
+}
+
+/* Overlay za wysuwanym panelem */
+.menu-overlay{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(2px);
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 1000;
+}
+body.menu-open .menu-overlay{
+  opacity: 1; pointer-events: auto;
+}
+
+/* Panel mobilnego menu – slide-in z prawej */
+.mobile-menu{
+  position: fixed; top: 0; right: 0;
+  height: 100vh; width: min(86vw, 360px);
+  background: rgba(0,0,0,.92);
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(255,255,255,.08);
+  padding: 80px 18px 18px;  /* zapas pod header + marginesy */
+  transform: translateX(100%);
+  transition: transform .28s cubic-bezier(.2,.7,.2,1);
+  z-index: 1001;
+  display: flex; flex-direction: column; gap: .4rem;
+}
+body.menu-open .mobile-menu{ transform: translateX(0); }
+
+/* Linki w panelu – duże hit-area */
+.mobile-nav-link{
+  display: block;
+  font-size: 1.05rem;
+  padding: 14px 10px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* Blokada scrolla tła przy otwartym menu */
+body.menu-open{ overflow: hidden; }
 </style>
 </head>
 <script>
@@ -733,14 +777,18 @@ section { background: transparent; }
         <a href="#portfolio" class="nav-link">Portfolio</a>
         <a href="#contact" class="nav-link">Kontakt</a>
       </nav>
-      <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn"
+        aria-label="Otwórz menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu">
+  <span></span><span></span><span></span>
+</button>
     </div>
   </header>
+	<div id="menuOverlay" class="menu-overlay" hidden></div>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-labelledby="mobileMenuBtn">
     <a href="#about" class="mobile-nav-link">O nas</a>
     <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
     <a href="#contact" class="mobile-nav-link">Kontakt</a>
@@ -1095,10 +1143,70 @@ if (aboutReveals.length){
   }, { threshold: 0.2 });
   aboutReveals.forEach(el => io.observe(el));
 }
+(function(){
+  const btn = document.getElementById('mobileMenuBtn');
+  const panel = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('menuOverlay');
+  const body = document.body;
 
+  if(!btn || !panel || !overlay) return;
+
+  let previousFocus = null;
+
+  const getFocusable = () =>
+    panel.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+
+  function openMenu(){
+    previousFocus = document.activeElement;
+    body.classList.add('menu-open');
+    btn.classList.add('active');
+    btn.setAttribute('aria-expanded','true');
+    overlay.hidden = false;
+
+    const foc = getFocusable();
+    if(foc.length) foc[0].focus();
+  }
+
+  function closeMenu(){
+    body.classList.remove('menu-open');
+    btn.classList.remove('active');
+    btn.setAttribute('aria-expanded','false');
+    overlay.hidden = true;
+    if(previousFocus) previousFocus.focus();
+  }
+
+  // Toggle
+  btn.addEventListener('click', () => {
+    const open = body.classList.contains('menu-open');
+    open ? closeMenu() : openMenu();
+  });
+
+  // Zamknij klikając w tło lub link
+  overlay.addEventListener('click', closeMenu);
+  panel.addEventListener('click', e => {
+    const a = e.target.closest('a');
+    if(a) closeMenu();
+  });
+
+  // ESC
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && body.classList.contains('menu-open')) closeMenu();
+  });
+
+  // Focus trap w panelu
+  document.addEventListener('keydown', e => {
+    if(e.key !== 'Tab' || !body.classList.contains('menu-open')) return;
+    const foc = getFocusable();
+    if(!foc.length) return;
+    const first = foc[0], last = foc[foc.length-1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  });
+})();
 </script>
 </body>
 </html>
+
 
 
 
