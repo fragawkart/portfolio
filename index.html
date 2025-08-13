@@ -357,8 +357,37 @@ section { background: transparent; }
 @media (min-width:1024px){ .footer-content{ grid-template-columns: repeat(4,1fr); } }
 
 /* ========== RWD ========== */
-@media (max-width:992px){
-  .hero-inner{ grid-template-columns:1fr; text-align:center; }
+/* MOBILE: lewy align hero */
+@media (max-width: 992px){
+  .hero-inner{ 
+    grid-template-columns: 1fr;         /* jedna kolumna */
+  }
+  .hero-text{
+    text-align: left;                    /* zamiast center */
+    align-items: flex-start;             /* gdyby był flex/grid gdzieś wyżej */
+  }
+  .hero-title,
+  .hero-title .line{
+    text-align: left;
+  }
+}
+
+/* dopieszczka rozmiaru i odstępów na bardzo małych ekranach */
+@media (max-width: 520px){
+  .hero-title{
+    font-size: clamp(2rem, 9.5vw, 3.4rem);
+    line-height: 1.12;
+    margin: 0;
+  }
+  .word-roller{ 
+    margin-left: .1rem;                  /* mały luz po "swoją" */
+  }
+}
+
+/* (jeśli masz mini-pigułkę po prawej – żeby nie pchała layoutu na mobile) */
+@media (max-width: 992px){
+  .pills3{ transform: none; margin: .75rem 0 0; }
+}
   .hero-media{ margin-top:2rem; }
 }
 @media (max-width:768px){
@@ -1030,4 +1059,5 @@ if (aboutReveals.length){
 </script>
 </body>
 </html>
+
 
