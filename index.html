@@ -611,6 +611,41 @@ section { background: transparent; }
     gap: 1rem;
   }
 }
+	  /* === MOBILE FIX PACK (≤ 900px) === */
+@media (max-width: 900px){
+  /* 1) układ i typografia hero */
+  .hero-inner{ grid-template-columns: 1fr; }
+  .hero-text{ text-align: center; }
+  .hero-title{
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .hero-title .line{ display:block; }
+
+  /* 2) slot-machine – pewna wysokość linijki, mniej ucinania */
+  .word-roller{ --h: 1.15em; }
+
+  /* 3) CTA: wyrównanie i bez łamania wiersza */
+  .hero-ctas{
+    display:flex; justify-content:center; gap:.9rem; flex-wrap:wrap;
+    margin-top: .4rem;
+  }
+  .btn, .btn-outline{ white-space: nowrap; }
+
+  /* 4) schowaj boczną „pigułkę” na telefonach (nachodziła na CTA) */
+  #pills3{ display:none !important; }
+
+  /* 5) opis pod nagłówkiem – przyjemna szerokość */
+  .lead{ font-size:1.05rem; max-width: 38ch; margin-inline:auto; }
+}
+
+/* delikatnie większy hit-area i równe promienie w CTA */
+.btn, .btn-outline{
+  min-height: 48px;
+  padding: .8rem 1.25rem;
+  border-radius: .6rem;
+}
 </style>
 </head>
 <script>
@@ -673,7 +708,7 @@ section { background: transparent; }
 
         <div class="hero-ctas">
           <a href="#contact" class="btn btn-primary">Skontaktuj się</a>
-          <a href="#portfolio" class="btn btn-outline">Zobacz portfolio</a>
+          <a href="#portfolio" class="btn btn-outline">Zobacz&nbsp;portfolio</a>
         </div>
       </div>
 	  <div class="hero-media">
@@ -995,3 +1030,4 @@ if (aboutReveals.length){
 </script>
 </body>
 </html>
+
