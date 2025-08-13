@@ -675,6 +675,23 @@ section { background: transparent; }
   padding: .8rem 1.25rem;
   border-radius: .6rem;
 }
+	  /* FIX: domknięcie media + przeniesienie hero-media do tego samego bloku */
+@media (max-width: 992px){
+  .pills3{ transform: none; margin: .75rem 0 0; }
+  .hero-media{ margin-top: 2rem; }
+}
+
+/* Wymuszenie LEWEGO wyrównania na mobile – wszystkie linie h1 i roller */
+@media (max-width: 900px){
+  .hero-inner{ grid-template-columns: 1fr; }
+  .hero-text, .hero-title, .hero-title .line{ text-align: left !important; }
+  .hero-title{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* lewy „grzbiet” */
+  }
+  .word-roller{ margin-left: 0; } /* bez przesunięcia względem białych linii */
+}
 </style>
 </head>
 <script>
@@ -712,23 +729,23 @@ section { background: transparent; }
     <div class="container hero-inner">
       <div class="hero-text">
         <h1 class="hero-title">
-          <span class="line">Zbuduj swoją</span>
-          <span class="line">
-            <span class="highlight-wrapper">
-              <span id="wordRoller" class="word-roller" aria-live="polite">
-                <span class="slot current">wiarygodność</span>
-                <span class="slot next" aria-hidden="true"></span>
-              </span>
-            </span>
-          </span>
-          <span class="line">w sieci</span>
-		    <!-- NOWA karuzela 3 słów -->
+  <span class="line">Zbuduj swoją</span>
+  <span class="line">
+    <span class="highlight-wrapper">
+      <span id="wordRoller" class="word-roller" aria-live="polite">
+        <span class="slot current">wiarygodność</span>
+        <span class="slot next" aria-hidden="true"></span>
+      </span>
+    </span>
+  </span>
+  <span class="line">w sieci</span>
+
+  <!-- mini-pigułka (opcjonalna) -->
   <span id="pills3" class="pills3" aria-label="typy stron">
     <span class="pill current">Wizytówki</span>
     <span class="pill next" aria-hidden="true"></span>
   </span>
-</span>
-        </h1>
+</h1>
 
         <p class="lead">
           Daj się znaleźć, zachwyć designem<br>
@@ -1059,5 +1076,6 @@ if (aboutReveals.length){
 </script>
 </body>
 </html>
+
 
 
