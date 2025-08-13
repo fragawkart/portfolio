@@ -692,6 +692,29 @@ section { background: transparent; }
   }
   .word-roller{ margin-left: 0; } /* bez przesunięcia względem białych linii */
 }
+	  /* Na dużych ekranach może zostać, ale od ~1200px w dół zerujemy */
+@media (max-width: 1200px){
+  .nav-brand{ margin-left: 0 !important; }
+}
+
+/* Dodatkowe bezpieczeństwo dla tablet/telefon */
+@media (max-width: 768px){
+  .header { left: 0; right: 0; } /* dopięte do krawędzi */
+  .header .container{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between;
+  }
+
+  /* Mobilne menu ma wypełniać pełną szerokość i startować od lewej */
+  .mobile-menu{
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    box-sizing: border-box;
+    transform: none !important;
+  }
+}
 </style>
 </head>
 <script>
@@ -1076,6 +1099,7 @@ if (aboutReveals.length){
 </script>
 </body>
 </html>
+
 
 
 
