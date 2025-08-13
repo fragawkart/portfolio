@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polityka Prywatności — SafeLaunch</title>
+  <meta name="description" content="Polityka prywatności serwisu SafeLaunch. Informacje o danych osobowych, cookies, prawach użytkowników i kontakt.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logo4.png" type="image/png" sizes="48x48">
+
+  <style>
+    :root{
+      --bg: #0b0b0b;
+      --panel: #0f1115;
+      --muted: #9aa4b2;
+      --text: #e6e8ec;
+      --border: rgba(255,255,255,.08);
+      --accent: #325ab8; /* Twój niebieski */
+      --accent-weak: rgba(50,90,184,.18);
+    }
+    *{ box-sizing: border-box; }
+    html, body{ height:100%; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, #111827 0%, transparent 60%),
+                  radial-gradient(1000px 700px at 120% 20%, #0f172a 0%, transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap{ max-width: 980px; margin: 48px auto; padding: 0 20px; }
+    .bar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; margin-bottom: 22px;
+    }
+    .bar a{
+      color: var(--text); text-decoration: none; opacity:.85;
+      border:1px solid var(--border); padding:10px 14px; border-radius:10px;
+      background: #0b0d12; transition: .2s;
+    }
+    .bar a:hover{ opacity:1; border-color: var(--accent-weak); box-shadow: 0 0 0 2px var(--accent-weak) inset; }
+    .paper{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--border);
+      border-radius:16px; padding: 28px clamp(18px,2.4vw,32px);
+      box-shadow: 0 20px 60px -20px rgba(0,0,0,.6);
+    }
+    h1{ font-size: clamp(1.8rem, 2.4vw, 2.4rem); margin: 0 0 12px; font-weight: 800; letter-spacing:.2px; }
+    .h1-sub{ color: var(--muted); margin-bottom: 22px; font-size: .98rem; }
+    h2{ font-size: clamp(1.2rem, 1.8vw, 1.4rem); margin: 28px 0 10px; border-left: 3px solid var(--accent); padding-left:10px; }
+    h3{ font-size: 1.05rem; margin: 18px 0 8px; color: #cfd6df; }
+    p{ margin: 10px 0; color: #d7dbe2; }
+    ul{ margin: 8px 0 14px 18px; padding:0; }
+    li{ margin: 6px 0; color:#d7dbe2; }
+    a{ color: #a7c3ff; }
+    .kbd{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .92em; background: #0c1322; color:#cfe0ff; border:1px solid #1b2a4b; padding: .14em .42em; border-radius: 6px; }
+    .toc{
+      display:grid; gap:8px; margin: 8px 0 22px;
+      background: #0c0f15; border:1px dashed var(--border); padding: 14px; border-radius:12px;
+    }
+    .badge{
+      display:inline-block; font-size:.8rem; color:#dfe7ff; background: var(--accent-weak);
+      padding:.28rem .5rem; border-radius:999px; border:1px solid rgba(50,90,184,.3);
+      margin-left:8px;
+    }
+    .muted{ color: var(--muted); }
+    hr{ border: 0; border-top:1px solid var(--border); margin: 24px 0; }
+    .foot{
+      display:flex; gap:12px; flex-wrap:wrap; justify-content:space-between; align-items:center; margin-top: 18px;
+      color: var(--muted); font-size: .95rem;
+    }
+    @media print{
+      body{ background:#fff; color:#111; }
+      .paper{ background:#fff; border-color:#eee; box-shadow:none; }
+      a{ color:#0645ad; }
+      .bar{ display:none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="bar">
+      <a href="index.html">← Wróć na stronę główną</a>
+      <div>
+        <a href="terms.html" title="Regulamin">Regulamin</a>
+      </div>
+    </div>
+
+    <article class="paper">
+      <h1>Polityka Prywatności <span class="badge">RODO</span></h1>
+      <div class="h1-sub">Data wejścia w życie: <strong>13.08.2025</strong></div>
+
+      <div class="toc">
+        <strong>Spis treści</strong>
+        <a href="#1">1. Administrator danych</a>
+        <a href="#2">2. Zakres i cele przetwarzania</a>
+        <a href="#3">3. Podstawy prawne (art. 6 RODO)</a>
+        <a href="#4">4. Odbiorcy danych i transfer</a>
+        <a href="#5">5. Okres przechowywania</a>
+        <a href="#6">6. Twoje prawa</a>
+        <a href="#7">7. Pliki cookie</a>
+        <a href="#8">8. Bezpieczeństwo</a>
+        <a href="#9">9. Kontakt i skargi</a>
+        <a href="#10">10. Zmiany dokumentu</a>
+      </div>
+
+      <section id="1">
+        <h2>1. Administrator danych</h2>
+        <p>Administratorem Twoich danych osobowych jest <strong>SafeLaunch</strong> („my”, „nas”, „Administrator”).</p>
+        <p>Kontakt: <a href="mailto:safelaunchweb@gmail.com">safelaunchweb@gmail.com</a></p>
+        <p class="muted">Jeśli działasz w imieniu firmy, podaj nam dane identyfikacyjne podmiotu (np. nazwę, NIP) w korespondencji.</p>
+      </section>
+
+      <section id="2">
+        <h2>2. Zakres i cele przetwarzania</h2>
+        <h3>Formularz/kontakt mailowy</h3>
+        <ul>
+          <li>Dane: adres e-mail, treść wiadomości, ew. imię/nazwa, numer telefonu.</li>
+          <li>Cel: udzielenie odpowiedzi, przygotowanie wyceny/umowy, obsługa zapytań.</li>
+        </ul>
+        <h3>Realizacja usług</h3>
+        <ul>
+          <li>Dane: identyfikacyjne i kontaktowe, dane niezbędne do realizacji projektu (np. materiały, dostęp do narzędzi).</li>
+          <li>Cel: wykonanie umowy, rozliczenia, wsparcie posprzedażowe.</li>
+        </ul>
+        <h3>Rozliczenia i obowiązki prawne</h3>
+        <ul>
+          <li>Dane: dane do faktury/rachunku, historia transakcji.</li>
+          <li>Cel: prowadzenie dokumentacji księgowej, podatki.</li>
+        </ul>
+        <h3>Marketing (opcjonalnie)</h3>
+        <ul>
+          <li>Dane: e-mail (newsletter) — tylko za Twoją <em>zgodą</em>.</li>
+          <li>Cel: komunikacja o nowościach i ofercie; możesz wycofać zgodę w każdym momencie.</li>
+        </ul>
+      </section>
+
+      <section id="3">
+        <h2>3. Podstawy prawne (art. 6 RODO)</h2>
+        <ul>
+          <li>art. 6 ust. 1 lit. <strong>b</strong> RODO — wykonanie umowy lub działania przed jej zawarciem,</li>
+          <li>art. 6 ust. 1 lit. <strong>c</strong> RODO — obowiązki prawne (np. podatkowe),</li>
+          <li>art. 6 ust. 1 lit. <strong>f</strong> RODO — nasz prawnie uzasadniony interes (np. dochodzenie roszczeń, obrona przed roszczeniami, komunikacja operacyjna),</li>
+          <li>art. 6 ust. 1 lit. <strong>a</strong> RODO — Twoja zgoda (np. newsletter).</li>
+        </ul>
+      </section>
+
+      <section id="4">
+        <h2>4. Odbiorcy danych i transfer</h2>
+        <p>Możemy powierzać dane sprawdzonym podmiotom przetwarzającym je na nasze zlecenie, m.in. dostawcom hostingu, poczty, narzędzi analitycznych/projektowych, księgowości — wyłącznie w zakresie niezbędnym do świadczenia usług.</p>
+        <p>Co do zasady nie przekazujemy danych poza EOG. Jeśli doszłoby do transferu, zapewnimy odpowiednie zabezpieczenia (np. standardowe klauzule umowne UE).</p>
+      </section>
+
+      <section id="5">
+        <h2>5. Okres przechowywania</h2>
+        <ul>
+          <li>korespondencja — do 12 miesięcy od zakończenia wątku lub do upływu terminów przedawnienia roszczeń,</li>
+          <li>dokumenty księgowe — przez okres wymagany przepisami (zwykle 5 lat),</li>
+          <li>dane przetwarzane na podstawie zgody — do jej wycofania.</li>
+        </ul>
+      </section>
+
+      <section id="6">
+        <h2>6. Twoje prawa</h2>
+        <p>Masz prawo do: dostępu do danych, sprostowania, usunięcia, ograniczenia, sprzeciwu (gdy podstawą jest nasz interes prawny), przenoszenia danych, wycofania zgody (bez wpływu na zgodność z prawem przetwarzania sprzed wycofania).</p>
+      </section>
+
+      <section id="7">
+        <h2>7. Pliki cookie</h2>
+        <p>Używamy technicznie niezbędnych plików cookie do poprawnego działania serwisu. Jeżeli włączymy narzędzia analityczne/marketingowe, pokażemy baner zgody i zaktualizujemy tę sekcję.</p>
+        <h3>Jak kontrolować cookies?</h3>
+        <p>Możesz je usuwać/blokować w przeglądarce (<span class="kbd">Ustawienia → Prywatność</span>). Skutkiem może być ograniczenie niektórych funkcji strony.</p>
+      </section>
+
+      <section id="8">
+        <h2>8. Bezpieczeństwo</h2>
+        <p>Stosujemy adekwatne środki techniczne i organizacyjne, m.in. szyfrowanie transmisji (HTTPS), kontrolę dostępu i minimalizację zakresu danych.</p>
+      </section>
+
+      <section id="9">
+        <h2>9. Kontakt i skargi</h2>
+        <p>W sprawach danych osobowych: <a href="mailto:safelaunchweb@gmail.com">safelaunchweb@gmail.com</a></p>
+        <p>Masz prawo wnieść skargę do Prezesa UODO (uodo.gov.pl), jeśli uznasz, że przetwarzamy dane niezgodnie z prawem.</p>
+      </section>
+
+      <section id="10">
+        <h2>10. Zmiany dokumentu</h2>
+        <p>Możemy aktualizować Politykę, np. gdy zmieniają się przepisy lub funkcje serwisu. Nowe brzmienie obowiązuje od publikacji na tej stronie.</p>
+      </section>
+
+      <hr>
+      <div class="foot">
+        <span>© <span id="y"></span> SafeLaunch</span>
+        <span><a href="terms.html">Regulamin</a> • <a href="index.html#contact">Kontakt</a></span>
+      </div>
+    </article>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

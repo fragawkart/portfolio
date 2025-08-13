@@ -1,0 +1,200 @@
+<!-- FILE: terms.html -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Regulamin — SafeLaunch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <link rel="icon" href="assets/logo4.png" type="image/png" sizes="48x48">
+  <style>
+    :root{
+      --primary: 50 90 184;
+      --primary-glow: 134 168 219;
+      --text: 217 217 217;
+      --muted: 173 181 191;
+      --border: 48 58 72;
+      --bg1:#000;
+      --bg2:#111;
+    }
+    body{
+      margin:0; font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      color: rgb(var(--text));
+      background: linear-gradient(180deg, var(--bg1), var(--bg2)) fixed;
+    }
+    .wrap{max-width:960px; margin:0 auto; padding:32px 16px 80px;}
+    .topbar{
+      display:flex; justify-content:space-between; align-items:center; gap:12px;
+      padding:16px 0 8px; border-bottom:1px solid rgba(var(--border),.6);
+      margin-bottom:24px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit}
+    .brand-logo{width:28px; height:28px; border-radius:6px; background:linear-gradient(135deg, rgba(var(--primary),1), rgba(var(--primary-glow),.8)); box-shadow:0 0 18px rgba(var(--primary-glow),.35)}
+    .back, .print{
+      appearance:none; border:1px solid rgba(var(--border),.7); background:transparent; color:rgb(var(--text));
+      padding:8px 12px; border-radius:8px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    }
+    .back:hover, .print:hover{border-color:rgba(var(--primary-glow),.6)}
+    h1{font-size:clamp(1.8rem,3vw,2.4rem); line-height:1.2; margin:.2rem 0 .5rem}
+    .meta{color:rgb(var(--muted)); font-size:.95rem; margin-bottom:22px}
+    .toc{
+      background:rgba(255,255,255,.03); border:1px solid rgba(var(--border),.6); border-radius:14px;
+      padding:14px 16px; margin:18px 0 28px;
+    }
+    .toc b{display:block; margin-bottom:8px}
+    .toc a{color:rgb(var(--text)); opacity:.9; text-decoration:none}
+    .toc a:hover{opacity:1; color:rgb(var(--primary-glow))}
+    h2{font-size:clamp(1.2rem,2.4vw,1.45rem); margin:28px 0 10px}
+    p,li{color:rgb(var(--muted))}
+    .note{
+      border-left:3px solid rgba(var(--primary-glow),.6);
+      background:rgba(255,255,255,.03);
+      padding:12px 14px; border-radius:10px; margin:18px 0;
+      color:rgb(var(--muted));
+    }
+    footer{
+      margin-top:40px; padding-top:16px; border-top:1px solid rgba(var(--border),.6);
+      display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; color:rgb(var(--muted));
+      font-size:.95rem;
+    }
+    a{color:rgb(var(--primary-glow))}
+    @media (max-width:600px){ .topbar{flex-direction:column; align-items:flex-start} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-logo" aria-hidden="true"></span>
+        <span>SafeLaunch</span>
+      </a>
+      <div style="display:flex; gap:8px">
+        <a class="back" href="index.html">← Wróć na stronę główną</a>
+        <button class="print" onclick="window.print()">🖨️ Drukuj</button>
+      </div>
+    </div>
+
+    <h1>Regulamin serwisu</h1>
+    <div class="meta">Ostatnia aktualizacja: <time datetime="2025-08-13">13 sierpnia 2025</time></div>
+
+    <div class="toc">
+      <b>Spis treści</b>
+      <ol>
+        <li><a href="#1">Postanowienia ogólne</a></li>
+        <li><a href="#2">Definicje</a></li>
+        <li><a href="#3">Kontakt i wsparcie</a></li>
+        <li><a href="#4">Zakres usług</a></li>
+        <li><a href="#5">Warunki techniczne</a></li>
+        <li><a href="#6">Zapytania i wyceny</a></li>
+        <li><a href="#7">Umowy, płatności, faktury</a></li>
+        <li><a href="#8">Prawa własności intelektualnej</a></li>
+        <li><a href="#9">Odpowiedzialność</a></li>
+        <li><a href="#10">Odstąpienie i reklamacje</a></li>
+        <li><a href="#11">Dane osobowe i prywatność</a></li>
+        <li><a href="#12">Zmiany regulaminu</a></li>
+        <li><a href="#13">Postanowienia końcowe</a></li>
+      </ol>
+    </div>
+
+    <section id="1">
+      <h2>1. Postanowienia ogólne</h2>
+      <p>Niniejszy Regulamin określa zasady korzystania z serwisu SafeLaunch (dalej: „Serwis”) oraz warunki współpracy projektowej z nami.</p>
+    </section>
+
+    <section id="2">
+      <h2>2. Definicje</h2>
+      <ul>
+        <li><strong>Użytkownik</strong> — każda osoba odwiedzająca Serwis.</li>
+        <li><strong>Klient</strong> — podmiot, który zleca nam usługę (np. projekt strony www, wdrożenie).</li>
+        <li><strong>Usługa</strong> — działania projektowe/consulting/WDROŻENIE świadczone przez SafeLaunch.</li>
+        <li><strong>Materiały</strong> — treści i pliki dostarczane przez Klienta do realizacji projektu.</li>
+      </ul>
+    </section>
+
+    <section id="3">
+      <h2>3. Kontakt i wsparcie</h2>
+      <p>Podstawowy kontakt: <a href="mailto:safelaunchweb@gmail.com">safelaunchweb@gmail.com</a></p>
+    </section>
+
+    <section id="4">
+      <h2>4. Zakres usług</h2>
+      <p>Realizujemy m.in. projektowanie i wdrożenia stron (wizytówki, landing page, sklepy), doradztwo UX/UI, optymalizacje i integracje. Szczegółowy zakres każdorazowo ustalamy w ofercie i/lub umowie.</p>
+    </section>
+
+    <section id="5">
+      <h2>5. Warunki techniczne</h2>
+      <ul>
+        <li>Dla prawidłowego korzystania z Serwisu wymagane są: aktualna przeglądarka, włączony JavaScript, dostęp do Internetu.</li>
+        <li>Za utrzymanie hostingu domen/serwerów produkcyjnych odpowiada zwykle Klient (chyba że uzgodnimy inaczej).</li>
+      </ul>
+    </section>
+
+    <section id="6">
+      <h2>6. Zapytania i wyceny</h2>
+      <ul>
+        <li>Zapytania możesz przesłać mailowo. Na ich podstawie przygotowujemy wycenę i harmonogram.</li>
+        <li>Wycena może ulec zmianie po doprecyzowaniu zakresu lub w przypadku istotnych zmian po starcie projektu.</li>
+      </ul>
+    </section>
+
+    <section id="7">
+      <h2>7. Umowy, płatności, faktury</h2>
+      <ul>
+        <li>Realizację potwierdza umowa/zamówienie (akcept e-mailowy lub podpis elektroniczny/wersja papierowa).</li>
+        <li>Standardowo stosujemy płatności etapowe (np. zaliczka + transze). Terminy i forma płatności wskazane są w ofercie/umowie.</li>
+        <li>Przeniesienie praw/licencji następuje zgodnie z zapisami umowy i zwykle po rozliczeniu.</li>
+      </ul>
+    </section>
+
+    <section id="8">
+      <h2>8. Prawa własności intelektualnej</h2>
+      <p>Treści i elementy Serwisu (layout, grafiki, fragmenty kodu) są chronione prawem. Kopiowanie i ponowne użycie bez zgody jest zabronione. Prawa do projektów realizowanych dla Klienta określa umowa (przeniesienie autorskich praw majątkowych lub licencja).</p>
+    </section>
+
+    <section id="9">
+      <h2>9. Odpowiedzialność</h2>
+      <ul>
+        <li>Nie odpowiadamy za przerwy wynikające z siły wyższej, awarii po stronie dostawców hostingu lub infrastruktury Klienta.</li>
+        <li>Klient odpowiada za legalność i poprawność dostarczonych Materiałów (np. zdjęć, fontów, tekstów).</li>
+        <li>W przypadku usług rozwojowych/iteracyjnych drobne różnice względem koncepcji wizualnej są naturalne i akceptowalne.</li>
+      </ul>
+    </section>
+
+    <section id="10">
+      <h2>10. Odstąpienie i reklamacje</h2>
+      <ul>
+        <li>Jeśli Klient jest konsumentem, uprawnienia wynikają z przepisów o prawach konsumenta (z uwzględnieniem wyjątków dla usług cyfrowych rozpoczętych za zgodą przed upływem 14 dni).</li>
+        <li>Reklamacje prosimy kierować na adres e-mail. Rozpatrujemy je w rozsądnym terminie, przekazując uzasadnioną odpowiedź.</li>
+      </ul>
+      <div class="note">Ten serwis pełni funkcję portfolio/ofertową. Sprzedaż online (jeśli się pojawi) będzie miała własny regulamin płatności i dostaw.</div>
+    </section>
+
+    <section id="11">
+      <h2>11. Dane osobowe i prywatność</h2>
+      <p>Zasady przetwarzania danych opisuje <a href="privacy.html">Polityka prywatności</a>.</p>
+    </section>
+
+    <section id="12">
+      <h2>12. Zmiany regulaminu</h2>
+      <p>Regulamin może ulegać zmianom. Nowa wersja obowiązuje od chwili publikacji w Serwisie. Zmiany istotne komunikujemy w sposób widoczny na stronie.</p>
+    </section>
+
+    <section id="13">
+      <h2>13. Postanowienia końcowe</h2>
+      <ul>
+        <li>Prawem właściwym jest prawo polskie, a ewentualne spory rozstrzygane będą przez właściwe sądy powszechne.</li>
+        <li>Kontakt w sprawach Regulaminu: <a href="mailto:safelaunchweb@gmail.com">safelaunchweb@gmail.com</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> SafeLaunch. Wszystkie prawa zastrzeżone.</div>
+      <div>
+        <a href="privacy.html">Polityka prywatności</a> •
+        <a href="terms.html">Regulamin</a>
+      </div>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
