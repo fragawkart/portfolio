@@ -814,6 +814,15 @@ body.menu-open .mobile-menu{
     padding-inline: clamp(24px, 25vw, 360px) !important;
   }
 }
+	  @media (min-width: 992px){
+  .header .container{
+    justify-content: flex-start !important;               /* zamiast space-between */
+    gap: clamp(1.25rem, 4vw, 4rem) !important;            /* odstęp logo–menu */
+    /* zachowaj swoje boczne „guttery” 1/4–1/4 */
+    padding-inline: clamp(24px, 25vw, 360px) !important;
+  }
+  .nav-menu{ margin-left: 0 !important; }                 /* pewność, że nic nie pcha */
+}
 </style>
 </head>
 <script>
@@ -1296,6 +1305,7 @@ if (aboutReveals.length){
 </script>
 </body>
 </html>
+
 
 
 
