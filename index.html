@@ -839,6 +839,17 @@ body.menu-open .mobile-menu{
   }
   .nav-menu{ margin-left: 0 !important; }             /* nic nie pcha w prawo */
 }
+	  @media (min-width: 992px){
+  .header .container{
+    padding-inline: clamp(24px, 25vw, 360px) !important; /* logo zostaje gdzie było */
+    justify-content: flex-start !important;              /* jeden rząd: logo + menu */
+    gap: clamp(1rem, 3vw, 3.5rem) !important;            /* odstęp logo–menu */
+  }
+  .nav-menu{
+    margin-left: auto !important;                        /* dociśnij menu w prawo */
+    margin-right: clamp(16px, 4vw, 72px) !important;     /* i odsuń je TROCHĘ od prawej */
+  }
+}
 </style>
 </head>
 <script>
@@ -1321,6 +1332,7 @@ if (aboutReveals.length){
 </script>
 </body>
 </html>
+
 
 
 
