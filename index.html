@@ -1260,18 +1260,24 @@ if (aboutReveals.length){
 	
   
 
-    // Zamknij po kliknięciu w link
-    menu.addEventListener('click', e => {
-      if (e.target.closest('a')) {
-        menu.classList.remove('active');
-        btn.setAttribute('aria-expanded','false');
-        document.body.style.overflow = '';
-      }
-    });
-  });
+    (() => {
+  const btn = document.getElementById('mobileMenuBtn');
+  const panel = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('menuOverlay');
+  if (!btn || !panel || !overlay) return;
+
+  const open  = () => { document.body.classList.add('menu-open'); btn.classList.add('active'); btn.setAttribute('aria-expanded','true'); overlay.hidden = false; };
+  const close = () => { document.body.classList.remove('menu-open'); btn.classList.remove('active'); btn.setAttribute('aria-expanded','false'); overlay.hidden = true; };
+
+  btn.addEventListener('click', () => (document.body.classList.contains('menu-open') ? close() : open()));
+  overlay.addEventListener('click', close);
+  panel.addEventListener('click', e => { if (e.target.closest('a')) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
 </script>
 </body>
 </html>
+
 
 
 
