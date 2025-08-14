@@ -823,6 +823,14 @@ body.menu-open .mobile-menu{
   }
   .nav-menu{ margin-left: 0 !important; }                 /* pewność, że nic nie pcha */
 }
+	  /* Desktop: logo + menu po LEWEJ, z odstępem */
+@media (min-width: 992px){
+  .header .container{
+    justify-content: flex-start !important;        /* zamiast space-between */
+    gap: clamp(1rem, 3.5vw, 4rem) !important;      /* dystans logo–menu */
+  }
+  .nav-menu{ margin-left: 0 !important; }          /* pewność, że nic nie pcha */
+}
 </style>
 </head>
 <script>
@@ -1305,6 +1313,7 @@ if (aboutReveals.length){
 </script>
 </body>
 </html>
+
 
 
 
