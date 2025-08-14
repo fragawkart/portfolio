@@ -387,8 +387,7 @@ section { background: transparent; }
 /* (jeśli masz mini-pigułkę po prawej – żeby nie pchała layoutu na mobile) */
 @media (max-width: 992px){
   .pills3{ transform: none; margin: .75rem 0 0; }
-}
-  .hero-media{ margin-top:2rem; }
+  .hero-media{ margin-top: 2rem; }
 }
 @media (max-width:768px){
   .nav-menu{ display:none; }
@@ -801,55 +800,20 @@ body.menu-open .mobile-menu{
 
 /* Na mobile brand nie ucieka w lewo */
 @media (max-width: 992px){
-  .nav-brand{ margin-left: 0; }
+  .nav-brand{ margin-left: ; }
 }
-/* Header w „ramce” 1/4–1/4 */
 @media (min-width: 992px){
   .header .container{
-    max-width: none;
-    width: 100%;
-    margin: 0;
-    /* Równe boczne guttery: celujemy w 25% viewportu,
-       ale ograniczamy do rozsądnego maksimum, żeby na ultrawide nie było za wąsko */
-    padding-inline: clamp(24px, 25vw, 360px) !important;
-  }
-}
-	  @media (min-width: 992px){
-  .header .container{
-    justify-content: flex-start !important;               /* zamiast space-between */
-    gap: clamp(1.25rem, 4vw, 4rem) !important;            /* odstęp logo–menu */
-    /* zachowaj swoje boczne „guttery” 1/4–1/4 */
-    padding-inline: clamp(24px, 25vw, 360px) !important;
-  }
-  .nav-menu{ margin-left: 0 !important; }                 /* pewność, że nic nie pcha */
-}
-	  /* Desktop: logo + menu po LEWEJ, z odstępem */
-@media (min-width: 992px){
-  .header .container{
-    justify-content: flex-start !important;        /* zamiast space-between */
-    gap: clamp(1rem, 3.5vw, 4rem) !important;      /* dystans logo–menu */
-  }
-  .nav-menu{ margin-left: 0 !important; }          /* pewność, że nic nie pcha */
-}
-	  /* Desktop: przesuń menu w LEWO – obok logo */
-@media (min-width: 992px){
-  .header .container{
-    justify-content: flex-start !important;           /* zamiast space-between */
-    gap: clamp(1rem, 3vw, 3.5rem) !important;         /* odstęp logo–menu */
-  }
-  .nav-menu{ margin-left: 0 !important; }             /* nic nie pcha w prawo */
-}
-	  @media (min-width: 992px){
-  .header .container{
-    padding-inline: clamp(24px, 25vw, 360px) !important; /* logo zostaje gdzie było */
-    justify-content: flex-start !important;              /* jeden rząd: logo + menu */
-    gap: clamp(1rem, 3vw, 3.5rem) !important;            /* odstęp logo–menu */
+    justify-content: flex-start !important;  /* logo po lewej, menu w tym samym rzędzie */
   }
   .nav-menu{
-    margin-left: auto !important;                        /* dociśnij menu w prawo */
-    margin-right: clamp(16px, 4vw, 72px) !important;     /* i odsuń je TROCHĘ od prawej */
+    margin-left: auto !important;            /* dociśnięcie menu do prawej krawędzi */
+  }
+  .nav-brand{
+    margin-left: -200px !important;           /* TUTAJ regulujesz przesunięcie logo (np. -16px, -40px) */
   }
 }
+
 </style>
 </head>
 <script>
@@ -1332,7 +1296,6 @@ if (aboutReveals.length){
 </script>
 </body>
 </html>
-
 
 
 
