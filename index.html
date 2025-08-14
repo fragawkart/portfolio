@@ -803,17 +803,15 @@ body.menu-open .mobile-menu{
 @media (max-width: 992px){
   .nav-brand{ margin-left: 0; }
 }
-	  /* Desktop: przybliż logo do lewej */
+/* Header w „ramce” 1/4–1/4 */
 @media (min-width: 992px){
-  .header .container{ padding-left: 5rem; } /* daj 0, jeśli chcesz jeszcze bardziej */
-}
-	  @media (min-width: 992px){
   .header .container{
-    max-width: none;   /* nie ograniczaj do 1200px */
+    max-width: none;
     width: 100%;
-    margin: 0;         /* skasuj wyśrodkowanie margin: 0 auto */
-    padding-left: 10rem;   /* 0 = równo z krawędzią; daj 1rem jeśli chcesz mały gutter */
-    padding-right: 3rem;
+    margin: 0;
+    /* Równe boczne guttery: celujemy w 25% viewportu,
+       ale ograniczamy do rozsądnego maksimum, żeby na ultrawide nie było za wąsko */
+    padding-inline: clamp(24px, 25vw, 360px) !important;
   }
 }
 </style>
@@ -1298,6 +1296,7 @@ if (aboutReveals.length){
 </script>
 </body>
 </html>
+
 
 
 
