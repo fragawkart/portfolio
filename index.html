@@ -1133,7 +1133,7 @@ body.menu-open .mobile-menu{ transform: translateX(0); }
 document.addEventListener('DOMContentLoaded', () => {
   // === SLOT MACHINE (naprawione podwójne finalize) ===
   const words = ["wiarygodność","rozpoznawalność","reputację","widoczność","markę","obecność"];
-  const interval = 3000; // ms między zmianami
+  const interval = 2600; // ms między zmianami
 
   const roller = document.getElementById('wordRoller');
   if (!roller) return;
@@ -1149,11 +1149,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const fs = parseFloat(cs.fontSize) || 16;
     let lh = cs.lineHeight;
     let px;
-    if (lh === 'normal') px = fs * 1.2;
+    if (lh === 'normal') px = fs * 1.14;
     else if (lh.endsWith('px')) px = parseFloat(lh);
     else if (!isNaN(parseFloat(lh))) px = fs * parseFloat(lh);
     else px = fs * 1.2;
-    roller.style.setProperty('--h', (px * 1.06) + 'px'); // lekka rezerwa
+    roller.style.setProperty('--h', (px * 1.04) + 'px'); // lekka rezerwa
   };
 
   // szerokość na najszersze słowo -> brak skakania
@@ -1325,6 +1325,7 @@ if (aboutReveals.length){
 </script>
 </body>
 </html>
+
 
 
 
