@@ -831,6 +831,14 @@ body.menu-open .mobile-menu{
   }
   .nav-menu{ margin-left: 0 !important; }          /* pewność, że nic nie pcha */
 }
+	  /* Desktop: przesuń menu w LEWO – obok logo */
+@media (min-width: 992px){
+  .header .container{
+    justify-content: flex-start !important;           /* zamiast space-between */
+    gap: clamp(1rem, 3vw, 3.5rem) !important;         /* odstęp logo–menu */
+  }
+  .nav-menu{ margin-left: 0 !important; }             /* nic nie pcha w prawo */
+}
 </style>
 </head>
 <script>
@@ -1313,6 +1321,7 @@ if (aboutReveals.length){
 </script>
 </body>
 </html>
+
 
 
 
